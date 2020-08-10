@@ -1,0 +1,19 @@
+<h2 mat-dialog-title>{{data.mode}} Todo</h2>
+
+<mat-dialog-content>
+  <mat-form-field appearance="outline">
+    <mat-label>Input</mat-label>
+    <input matInput placeholder="Title" [(ngModel)]="data.title">
+  </mat-form-field>
+  <br>
+  <mat-form-field appearance="outline">
+    <mat-label>Textarea</mat-label>
+    <textarea matInput placeholder="Description" [(ngModel)]="data.description"
+    ></textarea>
+  </mat-form-field>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+  <button mat-button (click)="close()">Close</button>
+  <button mat-button [mat-dialog-close]="data" cdkFocusInitial>{{data.mode}}</button>
+</mat-dialog-actions>

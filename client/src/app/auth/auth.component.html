@@ -1,0 +1,20 @@
+<div class="login-page">
+  <div class="form">
+    <div *ngIf="!isLogin">
+      <form [formGroup]="registerForm" class="login-form">
+        <input formControlName="email" type="text" placeholder="email" id="email" />
+        <input formControlName="password" type="password" placeholder="password" id="password" />
+        <button (click)="handleRegister()" [disabled]="!registerForm.valid">create</button>
+      </form>
+      <p class="message">Already registered? <a (click)="toggleLogin()">Sign In</a></p>
+    </div>
+    <div *ngIf="isLogin">
+      <form [formGroup]="loginForm" class="login-form">
+        <input formControlName="email" type="text" placeholder="email" id="email" />
+        <input formControlName="password" type="password" placeholder="password" id="password">
+        <button (click)="handleLogin()" [disabled]="!loginForm.valid">Login</button>
+      </form>
+      <p class="message">Not registered? <a (click)="toggleLogin()">Create an account</a></p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="head">
+    <div class="title">todos</div>
+    <div class="right">
+      <button class="m-button" mat-stroked-button (click)="openDialog()" color="primary">Add Todo</button>
+      <button class="m-button" mat-stroked-button (click)="logout()" color="warn">Logout</button>
+    </div>
+  </div>
+  <img class="zero-state" *ngIf="todos.length === 0" src="assets/zerostate.png">
+  <div *ngIf="todos.length > 0" class="lists">
+    <mat-accordion *ngFor="let todo of todos" class="example-headers-align">
+      <mat-expansion-panel hideToggle>
+        
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <mat-checkbox
+              class="checkbox"
+              (change)="editTodo(todo)"
+              [(ngModel)]="todo.completed"
+              [disabled]="todo.completed">
+            </mat-checkbox>
+            <span 
+              class="{{todo.completed ? 'todo-done' : 'todo-title'}}">
+              {{todo.title}}
+            </span>
+          </mat-panel-title>
+          <mat-icon color="warn" (click)="deleteTodo(todo)">delete_forever</mat-icon>
+        </mat-expansion-panel-header>
+        <p class="description">{{todo.description}}</p>
+        <mat-action-row>
+          <button mat-button color="primary" (click)="openDialog(todo)">Edit Todo</button>
+        </mat-action-row>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </div>
+</div>

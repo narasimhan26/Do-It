@@ -1,0 +1,33 @@
+POST http://localhost:3001/api/users/signin
+content-type: application/json
+
+{
+  "email": "test3@test.com",
+  "password": "KalaChashma"
+}
+
+###
+POST  http://localhost:3001/api/todos/
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmMmZmMDljMGFhYmJkMTA1NWI1NjcwMSIsImVtYWlsIjoidGVzdDNAdGVzdC5jb20iLCJpYXQiOjE1OTY5ODAwOTF9.1wYRKxEN8LRkzd9WaCi-_SvCLeavAlqT_s1K5r4-_Ik
+
+{
+  "title": "A new Todo 4",
+  "description": "New Description 4"
+}
+
+###
+DELETE http://localhost:3000/api/todos/5f2e76197a86934039dee1c7
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmMmQ3ZjA5ZTYzMWZhMzQ0NTM2ZDI3OSIsImVtYWlsIjoidGVzdDJAdGVzdC5jb20iLCJpYXQiOjE1OTY4MTcyNDB9.9S_Q3MSdChUzNb-X1r2l3aH1TnHxcJhNCMABVyaEuFc
+
+###
+PUT  http://localhost:3000/api/todos/5f2e78afb4082a47974587ab
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmMmQ3ZjA5ZTYzMWZhMzQ0NTM2ZDI3OSIsImVtYWlsIjoidGVzdDJAdGVzdC5jb20iLCJpYXQiOjE1OTY4MTcyNDB9.9S_Q3MSdChUzNb-X1r2l3aH1TnHxcJhNCMABVyaEuFc
+
+{
+  "title": "A New Todo 4",
+  "description": "New Description 4",
+  "completed": true
+}
